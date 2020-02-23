@@ -35,7 +35,7 @@ const promos = [
     title: "Today Special",
     sub: "Power Brush B1G1",
     img: "/static/images/hp1.png",
-    src: "/promos/braun"
+    src: "/promos/oralb"
   },
   {
     title: "Limited Offer",

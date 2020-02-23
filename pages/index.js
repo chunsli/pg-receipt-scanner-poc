@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HomePage from '../src/containers/HomePage';
+import HomePage from '../src/containers/HomePage/index.js';
 
 function ResponsiveDrawer() {
 

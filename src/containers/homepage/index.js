@@ -20,11 +20,10 @@ const styles = makeStyles((theme) => ({
     padding: theme.spacing(1)
   },
   specialGrid: {
-    marginTop: theme.spacing(1),
-    padding: theme.spacing(1)
+    textDecoration: 'none',
   },
   specialContent: {
-
+    textDecoration: 'none',
   },
   specialHeader: {
     textAlign: 'center',
@@ -99,6 +98,7 @@ const LinteItemsTable = () => {
       onClick={onClick}
       href={href}
       ref={ref}
+      className={classes.specialGrid}
     >
       <PromoCard
         promo={promo}
@@ -110,7 +110,7 @@ const LinteItemsTable = () => {
   return (
     <Grid container align-content-xs-center={'true'}>
       <Carousel/>
-      <Grid container justify="space-around" spacing={2} className={classes.specialGrid}>
+      <Grid container justify="space-around">
         {
           promos.map((promo, i) => (
             <Grid item xs={6} className={classes.special} key={i}>
@@ -121,7 +121,7 @@ const LinteItemsTable = () => {
                     classes={classes}
                   />
                 </Link>) : (
-                  <a href={promo.link}>
+                  <a href={promo.link} className={classes.specialGrid}>
                     <PromoCard
                       promo={promo}
                       classes={classes}

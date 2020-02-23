@@ -44,7 +44,7 @@ export const scanReceipt = async (dispatch, params) => {
       return response.json();
     })
     .catch(function(e){
-      console.log(e);
+      console.error(e);
     });
 
 /*  const tokenResult = {

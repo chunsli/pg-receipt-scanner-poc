@@ -10,6 +10,7 @@ import theme from '../src/utils/theme'
 import NavBar from "../src/components/NavBar";
 import BottomBar from "../src/components/BottomBar";
 import Router from 'next/router';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const _App = withRedux(store)(
   class _App extends App {
@@ -50,13 +51,16 @@ const _App = withRedux(store)(
           <MuiThemeProvider theme={theme}>
             <CssBaseline />
             <Provider store={store}>
-              <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
-                <NavBar
-                  path={this.state.path}
-                />
-                <Component {...pageProps} />
-                <BottomBar />
-              </div>
+              <PersistGate persistor={store.__PERSISTOR} loading={null}>
+
+                <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
+                  <NavBar
+                    path={this.state.path}
+                  />
+                  <Component {...pageProps} />
+                  <BottomBar />
+                </div>
+              </PersistGate>
             </Provider>
           </MuiThemeProvider>
         </Fragment>

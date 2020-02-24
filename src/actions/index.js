@@ -31,7 +31,7 @@ export const scanReceipt = async (dispatch, params) => {
   await Router.push('/upload');
 
 
-/*  const formData = new FormData();
+  const formData = new FormData();
   formData.append('file', params);
 
   const url = 'https://asia-east2-pandg-268816.cloudfunctions.net/process';
@@ -48,9 +48,9 @@ export const scanReceipt = async (dispatch, params) => {
     })
     .catch(function(e){
       console.error(e);
-    });*/
+    });
 
-  const tokenResult = {
+/*  const tokenResult = {
     "message": "SUCCESS: Image uploaded successfully",
     "status": "success",
     "status_code": 2,
@@ -59,7 +59,7 @@ export const scanReceipt = async (dispatch, params) => {
     "code": 200,
     "duplicate": true,
     "duplicateToken": "Z1WtHisqOx7cK7Mo"
-  };
+  };*/
 
   dispatch({
     type: UPDATE_TOKEN,

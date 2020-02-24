@@ -1,4 +1,4 @@
-import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE } from '../constants'
+import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN } from '../constants'
 import { combineReducers } from 'redux'
 
 /*const initialState = {
@@ -423,11 +423,12 @@ import { combineReducers } from 'redux'
   ]
 }*/
 
-const initialState = {
+export const initialState = {
   action: null,
   summaryItems: [],
   data: {},
   lineItems: [],
+  tokens: [],
 }
 
 export const upload = (state = initialState, action)  => {
@@ -455,7 +456,10 @@ export const upload = (state = initialState, action)  => {
         isLoading: action.data,
         action: 'loading',
       }
-
+    case UPDATE_TOKEN:
+      return Object.assign({}, state, {
+        tokens: [].concat(action.data, state.tokens)
+      })
     default:
       return state
   }

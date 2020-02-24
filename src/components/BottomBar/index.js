@@ -5,12 +5,13 @@ import {
   BottomNavigationAction,
   BottomNavigation,
 } from '@material-ui/core';
-import Link from 'next/link';
 
 import { Home } from '@material-ui/icons';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import RedeemIcon from '@material-ui/icons/Redeem';
 import UploadButton from '../UploadButton';
+
+import Router from 'next/router';
 
 const useStyles = makeStyles({
   root: {
@@ -29,19 +30,18 @@ export default function SimpleBottomNavigation() {
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
+        if (newValue === 'home') {
+          Router.push('/');
+        } else if (newValue !== "scanner") {
+          Router.push(newValue);
+        }
       }}
       className={classes.root}
     >
-      <Link href="/shop">
-        <BottomNavigationAction label="Shop" showLabel={true} icon={<ShoppingCartIcon />} />
-      </Link>
-      <Link href="/index">
-        <BottomNavigationAction label="Home" showLabel={true} icon={<Home />} />
-      </Link>
-      <BottomNavigationAction label="Scanner" showLabel={true} icon={<UploadButton />} />
-      <Link href="/redeem">
-        <BottomNavigationAction label="Coupons" showLabel={true} icon={<RedeemIcon />} />
-      </Link>
+      <BottomNavigationAction label="Shop" showLabel={true} icon={<ShoppingCartIcon />} value={"/shop"} />
+      <BottomNavigationAction label="Home" showLabel={true} icon={<Home />} value={"home"} />
+      <BottomNavigationAction label="Scanner" showLabel={true} icon={<UploadButton />} value={"scanner"} />
+      <BottomNavigationAction label="Coupons" showLabel={true} icon={<RedeemIcon />}value={"/redeem"} />
     </BottomNavigation>
   );
 }

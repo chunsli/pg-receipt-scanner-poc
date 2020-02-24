@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
 import PersonIcon from '@material-ui/icons/Person';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
@@ -14,6 +14,9 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 import StarsIcon from '@material-ui/icons/Stars';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Avatar from '@material-ui/core/Avatar';
+import UndoIcon from '@material-ui/icons/Undo';
+import HistoryIcon from '@material-ui/icons/history';
+
 import {
   AppBar,
   Divider,
@@ -30,6 +33,8 @@ import {
 import Link from 'next/link';
 
 import UploadButton from '../UploadButton';
+import Router from "next/router";
+import { connect } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -75,8 +80,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function ResponsiveDrawer(props) {
-  const { container } = props;
+function NavBar(props) {
+  const { path } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -135,6 +140,12 @@ function ResponsiveDrawer(props) {
           <ListItemIcon><StarsIcon /></ListItemIcon>
           <ListItemText primary={'Premium'}>Premium</ListItemText>
         </ListItem>
+        <Link href="/history">
+          <ListItem button key={'history'} onClick={handleDrawerToggle}>
+            <ListItemIcon><HistoryIcon /></ListItemIcon>
+            <ListItemText primary={'history'}>History</ListItemText>
+          </ListItem>
+        </Link>
         <ListItem button key={'Setting'}>
           <ListItemIcon><SettingsIcon /></ListItemIcon>
           <ListItemText primary={'Setting'}>Setting</ListItemText>
@@ -148,15 +159,28 @@ function ResponsiveDrawer(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+          {path === '/' ? (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className={classes.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              color="inherit"
+              aria-label="Back to home"
+              edge="start"
+              onClick={() => Router.push('/')}
+              className={classes.menuButton}
+            >
+              <UndoIcon />
+            </IconButton>
+          )}
+
           <div className={classes.grow} />
           <IconButton
             aria-label="take a snap shot of receipts"
@@ -173,7 +197,6 @@ function ResponsiveDrawer(props) {
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
-            container={container}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
@@ -204,7 +227,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+NavBar.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -212,4 +235,5 @@ ResponsiveDrawer.propTypes = {
   container: PropTypes.any,
 };
 
-export default ResponsiveDrawer;
+
+export default NavBar;

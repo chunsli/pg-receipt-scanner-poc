@@ -1,8 +1,8 @@
-import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE } from '../constants'
+import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN } from '../constants'
 import { stringify } from 'qs';
 import axios from 'axios';
 import _ from 'lodash';
-import Router from 'next/router'
+import Router from 'next/router';
 
 export const request = (method, api, params) => {
   const query =
@@ -22,13 +22,16 @@ export const scanReceipt = async (dispatch, params) => {
     type: CLEAR_IMAGE,
     data: true,
   })
+
   dispatch({
     type: UPLOAD_LOADING,
     data: true,
   })
-  Router.push('/upload');
 
-  const formData = new FormData();
+  await Router.push('/upload');
+
+
+/*  const formData = new FormData();
   formData.append('file', params);
 
   const url = 'https://asia-east2-pandg-268816.cloudfunctions.net/process';
@@ -45,9 +48,9 @@ export const scanReceipt = async (dispatch, params) => {
     })
     .catch(function(e){
       console.error(e);
-    });
+    });*/
 
-/*  const tokenResult = {
+  const tokenResult = {
     "message": "SUCCESS: Image uploaded successfully",
     "status": "success",
     "status_code": 2,
@@ -56,8 +59,12 @@ export const scanReceipt = async (dispatch, params) => {
     "code": 200,
     "duplicate": true,
     "duplicateToken": "Z1WtHisqOx7cK7Mo"
-  };*/
+  };
 
+  dispatch({
+    type: UPDATE_TOKEN,
+    data: Object.assign({}, tokenResult, { time: new Date().toLocaleString() }),
+  });
 
   const data = await getResults(tokenResult);
 
@@ -94,3 +101,27 @@ const getResults = async (tokenRes) => {
   } while (!resultResponse || (resultResponse && resultResponse.data && resultResponse.data.status !== 'done'))
 
 };
+
+export const viewData = async (dispatch, tokenResult) => {
+  dispatch({
+    type: CLEAR_IMAGE,
+    data: true,
+  })
+  dispatch({
+    type: UPLOAD_LOADING,
+    data: true,
+  })
+
+  await Router.push('/upload');
+
+  const data = await getResults(tokenResult);
+
+  dispatch({
+    type: UPLOAD_IMAGE,
+    data,
+  });
+  dispatch({
+    type: UPLOAD_LOADING,
+    data: false,
+  })
+}

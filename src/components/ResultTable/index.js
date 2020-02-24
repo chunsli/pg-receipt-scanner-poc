@@ -8,6 +8,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+import { OpenInNew as OpenInNewIcon } from '@material-ui/icons'
+
 import {
   Table,
   TableBody,
@@ -37,7 +39,7 @@ const toTitleCase = str => str
   .replace(/([A-Z])/g, (match) => ` ${match}`)
   .replace(/^./, (match) => match.toUpperCase());
 
-const ResultTable = ({ data, classes, key, columns, title, isLoading }) => {
+const ResultTable = ({ data, classes, key, columns, title, isLoading, rowAction }) => {
 
   const headers = columns || uniqueKeys(data);
 
@@ -56,7 +58,7 @@ const ResultTable = ({ data, classes, key, columns, title, isLoading }) => {
               <Typography className={classes.title} variant="h6">
                 Analyzing Receipts...
               </Typography>
-            </caption>) : ''
+            </caption>) : null
           }
           <TableHead>
             <TableRow>
@@ -75,10 +77,18 @@ const ResultTable = ({ data, classes, key, columns, title, isLoading }) => {
                   }
                   if(typeof row[header] === 'string' || typeof row[header] === 'number') {
                     return (<TableCell key={`${i}-column-${j}`}>{row[header] || ''}</TableCell>)
+                  } else if (header === 'action') {
+                    return (
+                      <TableCell key={`${i}-column-${j}`}>
+                        <OpenInNewIcon
+                          onClick={() => rowAction(row)}
+                        />
+                      </TableCell>
+                    )
                   } else if (val) {
                     return (<TableCell key={`${i}-column-${j}`}>{val || ''}</TableCell>)
                   } else {
-                    return (<TableCell key={`${i}-column-${j}`}> </TableCell>)
+                    return (<TableCell key={`${i}-column-${j}`}>{}</TableCell>)
                   }
                 })}
               </TableRow>

@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function ResponsiveDrawer() {
+function ShopPage() {
   const classes = useStyles();
 
   return (
@@ -55,7 +55,7 @@ function ResponsiveDrawer() {
       <Grid xs={12} item className={classes.cat}>
         <Link href="#">
           <img src="/static/images/cat3.png" className={classes.catImg} />
-          <Grid xs={12} container>
+          <Grid container>
             <Typography variant="h6" className={classes.title}>
               Fresh Food
             </Typography>
@@ -66,7 +66,7 @@ function ResponsiveDrawer() {
       <Grid xs={12} item className={classes.cat}>
         <Link href="#">
           <img src="/static/images/cat2.png" className={classes.catImg} />
-          <Grid xs={12} container>
+          <Grid container>
             <Typography variant="h6" className={classes.title}>
               Shampoo & Conditioner
             </Typography>
@@ -77,7 +77,7 @@ function ResponsiveDrawer() {
       <Grid xs={12} item className={classes.cat}>
         <Link href="#">
           <img src="/static/images/cat1.png" className={classes.catImg} />
-          <Grid xs={12} container>
+          <Grid container>
             <Typography variant="h6" className={classes.title}>
               Detergent
             </Typography>
@@ -89,7 +89,7 @@ function ResponsiveDrawer() {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+ShopPage.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -97,4 +97,4 @@ ResponsiveDrawer.propTypes = {
   container: PropTypes.any,
 };
 
-export default ResponsiveDrawer;
+export default ShopPage;

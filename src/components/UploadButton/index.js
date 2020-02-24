@@ -7,6 +7,8 @@ import { green } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { scanReceipt } from '../../actions';
+import Alert from "../Alert";
+import Router from 'next/router';
 
 const styles = (theme) => ({
   input: {
@@ -26,15 +28,31 @@ class MediaCapture extends Component {
     classes: PropTypes.object.isRequired
   };
 
-  handleCapture = (e) => {
+  state = {
+    open: false,
+  }
+
+  handleCapture = async (e) => {
     const params = e.target.files[0];
     this.fileInput.value = "";
-    this.props.handleUpload(params);
+
+    await this.props.handleUpload(params);
+    this.handleOpen();
   };
 
-  render() {
-    const { classes, data, isLoading } = this.props;
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
 
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+
+
+  render() {
+    const { classes } = this.props;
+    const { open } = this.state;
     return (
       <Fragment>
         <input
@@ -48,6 +66,10 @@ class MediaCapture extends Component {
         <label htmlFor="icon-button-photo">
           <PhotoCamera />
         </label>
+        <Alert
+          handleClose={this.handleClose}
+          open={open}
+        />
       </Fragment>
     );
   }

@@ -9,6 +9,7 @@ import store from '../src/store'
 import theme from '../src/utils/theme'
 import NavBar from "../src/components/NavBar";
 import BottomBar from "../src/components/BottomBar";
+import Router from 'next/router';
 
 const _App = withRedux(store)(
   class _App extends App {
@@ -20,18 +21,25 @@ const _App = withRedux(store)(
       }
     }
 
+    state = {
+      path: '/'
+    }
+
     componentDidMount () {
       const jssStyles = document.querySelector('#jss-server-side')
       if (jssStyles && jssStyles.parentNode) {
         jssStyles.parentNode.removeChild(jssStyles)
       }
+      Router.onRouteChangeStart = url => {
+        this.setState(() => ({ path: url }));
+      };
     }
 
     render () {
       const {
         Component,
         pageProps,
-        store
+        store,
       } = this.props;
 
       return (
@@ -43,7 +51,9 @@ const _App = withRedux(store)(
             <CssBaseline />
             <Provider store={store}>
               <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
-                <NavBar />
+                <NavBar
+                  path={this.state.path}
+                />
                 <Component {...pageProps} />
                 <BottomBar />
               </div>

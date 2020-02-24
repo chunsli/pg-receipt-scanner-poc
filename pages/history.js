@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import MetaTable from '../src/containers/MetaDataTable';
+import TokensTable from '../src/containers/TokensTable';
 import LineItemsTable from '../src/containers/LineItemsTable';
 import SummaryTable from '../src/containers/SummaryTable';
 
@@ -25,26 +25,8 @@ function ResponsiveDrawer() {
 
   return (
     <Grid container>
-      <Grid container direction={'row'} align-content-xs-between={'true'}	>
-        <Grid xs={6} item className={classes.catBtn}>
-          <Button variant="outlined" color="primary" fullWidth startIcon={<HomeIcon />}>
-            Home
-          </Button>
-        </Grid>
-        <Grid xs={6} item className={classes.catBtn}>
-          <Button variant="outlined" color="primary" fullWidth startIcon={<RedeemIcon />}>
-            Redeem
-          </Button>
-        </Grid>
-      </Grid>
-      <Grid xs={12} item className={classes.table}>
-        <MetaTable />
-      </Grid>
-      <Grid xs={12} item className={classes.table}>
-        <SummaryTable />
-      </Grid>
-      <Grid xs={12} item className={classes.table}>
-        <LineItemsTable />
+      <Grid xs={12} className={classes.table}>
+        <TokensTable />
       </Grid>
     </Grid>
   );

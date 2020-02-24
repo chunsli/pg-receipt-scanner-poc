@@ -2,14 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import TokensTable from '../src/containers/TokensTable';
-import LineItemsTable from '../src/containers/LineItemsTable';
-import SummaryTable from '../src/containers/SummaryTable';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import { Grid } from '@material-ui/core';
-import Button from "@material-ui/core/Button";
-import { Home as HomeIcon, Redeem as RedeemIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   table: {

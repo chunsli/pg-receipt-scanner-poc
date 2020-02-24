@@ -15,7 +15,7 @@ import StarsIcon from '@material-ui/icons/Stars';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Avatar from '@material-ui/core/Avatar';
 import UndoIcon from '@material-ui/icons/Undo';
-import HistoryIcon from '@material-ui/icons/history';
+import HistoryIcon from '@material-ui/icons/History';
 
 import {
   AppBar,

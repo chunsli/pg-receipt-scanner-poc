@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexGrow: 1,
     marginTop: 20,
+    marginBottom: 20,
   },
   space: {
     padding: theme.spacing(1)

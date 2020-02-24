@@ -125,8 +125,8 @@ function ResponsiveDrawer(props) {
             <ListItemText primary={'Shopping Cart'}>Shopping Cart</ListItemText>
           </ListItem>
         </Link>
-        <Link href="/feedback" onClick={handleDrawerToggle}>
-          <ListItem button key={'Feedback'}>
+        <Link href="/feedback">
+          <ListItem button key={'Feedback'} onClick={handleDrawerToggle}>
             <ListItemIcon><FeedbackIcon /></ListItemIcon>
             <ListItemText primary={'Feedback'}>Feedback</ListItemText>
           </ListItem>

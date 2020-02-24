@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
   card: {
     margin: theme.spacing(1),
     width: '40%',
-    textAlign: 'center'
+    textAlign: 'center',
+    textDecoration: 'none',
   },
   avatar: {
     width: theme.spacing(20),
@@ -63,7 +64,7 @@ function ResponsiveDrawer() {
         direction="row"
       >
         <Card className={classes.card}>
-          <Link href="/redeem">
+          <Link href="/redeem" passHref>
             <CardContent>
               <Typography variant="h6">
                 20 Points
@@ -72,13 +73,13 @@ function ResponsiveDrawer() {
           </Link>
         </Card>
         <Card className={classes.card}>
-          <Link href="https://www.pg-o2o.com/hk/">
+          <a href="https://www.pg-o2o.com/hk/" style={{ textDecoration: 'none' }}>
             <CardContent>
               <Typography variant="h6">
                 My Coupon
               </Typography>
             </CardContent>
-          </Link>
+          </a>
         </Card>
       </Grid>
       <Grid

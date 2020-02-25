@@ -112,6 +112,7 @@ function NavBar(props) {
           </Avatar>
         }
         title="Norris Fung"
+        titleTypographyProps={{ variant: "h6" }}
       />
       <Divider />
       <List>
@@ -152,9 +153,9 @@ function NavBar(props) {
           <ListItemText primary={'Premium'}>Premium</ListItemText>
         </ListItem>
         <Link href="/history">
-          <ListItem button key={'history'} onClick={handleDrawerToggle}>
+          <ListItem button key={'History'} onClick={handleDrawerToggle}>
             <ListItemIcon><HistoryIcon /></ListItemIcon>
-            <ListItemText primary={'history'}>History</ListItemText>
+            <ListItemText primary={'History'}>History</ListItemText>
           </ListItem>
         </Link>
         <ListItem button key={'Setting'}>

@@ -16,6 +16,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import Avatar from '@material-ui/core/Avatar';
 import UndoIcon from '@material-ui/icons/Undo';
 import HistoryIcon from '@material-ui/icons/History';
+import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
 
 import {
   AppBar,
@@ -34,7 +35,7 @@ import Link from 'next/link';
 
 import UploadButton from '../UploadButton';
 import Router from "next/router";
-import { connect } from 'react-redux';
+import Grid from "@material-ui/core/Grid";
 
 const drawerWidth = 240;
 
@@ -77,7 +78,7 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     width: theme.spacing(8),
     height: theme.spacing(8),
-  }
+  },
 }));
 
 function NavBar(props) {
@@ -92,7 +93,17 @@ function NavBar(props) {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <div />
+      <Grid container className={classes.toolbar} alignContent={"flex-end"} justify={"flex-end"}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerToggle}
+        >
+          <ArrowBackIosIcon />
+        </IconButton>
+      </Grid>
+
       <Divider />
       <CardHeader
         avatar={

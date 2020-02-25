@@ -6,9 +6,9 @@ import { green } from '@material-ui/core/colors';
 
 import { withStyles } from '@material-ui/core/styles';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import { scanReceipt } from '../../actions';
 import Alert from "../Alert";
-import Router from 'next/router';
+
+import { closeAlert, scanReceipt } from '../../actions';
 
 const styles = (theme) => ({
   input: {
@@ -37,22 +37,10 @@ class MediaCapture extends Component {
     this.fileInput.value = "";
 
     await this.props.handleUpload(params);
-    this.handleOpen();
   };
-
-  handleOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
-
 
   render() {
-    const { classes } = this.props;
-    const { open } = this.state;
+    const { classes, open, handleClose } = this.props;
     return (
       <Fragment>
         <input
@@ -67,7 +55,7 @@ class MediaCapture extends Component {
           <PhotoCamera />
         </label>
         <Alert
-          handleClose={this.handleClose}
+          handleClose={handleClose}
           open={open}
         />
       </Fragment>
@@ -77,14 +65,14 @@ class MediaCapture extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    data: state.upload.data,
-    isLoading: state.upload.isLoading
+    open: state.alert
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleUpload: params => scanReceipt(dispatch, params),
+    handleClose: () => closeAlert(dispatch)
   };
 };
 

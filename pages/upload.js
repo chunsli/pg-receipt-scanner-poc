@@ -11,6 +11,11 @@ import { Grid } from '@material-ui/core';
 import Button from "@material-ui/core/Button";
 import { Home as HomeIcon, Redeem as RedeemIcon } from '@material-ui/icons';
 
+import { connect } from 'react-redux';
+import {openAlert, scanReceipt} from "../src/actions";
+
+import Router from 'next/router';
+
 const useStyles = makeStyles(theme => ({
   table: {
     padding: theme.spacing(1)
@@ -20,19 +25,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ResponsiveDrawer() {
+function ResponsiveDrawer({ handleOpenAlert }) {
   const classes = useStyles();
 
   return (
     <Grid container>
       <Grid container direction={'row'} align-content-xs-between={'true'}	>
         <Grid xs={6} item className={classes.catBtn}>
-          <Button variant="outlined" color="primary" fullWidth startIcon={<HomeIcon />}>
+          <Button variant="outlined" color="primary" fullWidth startIcon={<HomeIcon />} onClick={() => {
+            Router.push('/');
+            return handleOpenAlert();
+          }}>
             Home
           </Button>
         </Grid>
         <Grid xs={6} item className={classes.catBtn}>
-          <Button variant="outlined" color="primary" fullWidth startIcon={<RedeemIcon />}>
+          <Button variant="outlined" color="primary" fullWidth startIcon={<RedeemIcon />} onClick={() => Router.push('/redeem')}>
             Redeem
           </Button>
         </Grid>
@@ -50,12 +58,18 @@ function ResponsiveDrawer() {
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container: PropTypes.any,
+const mapStateToProps = (state, ownProps) => {
+  return {
+  };
 };
 
-export default ResponsiveDrawer;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    handleOpenAlert: () => openAlert(dispatch),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResponsiveDrawer);

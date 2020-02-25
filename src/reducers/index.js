@@ -1,4 +1,4 @@
-import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN } from '../constants'
+import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN, OPEN_ALERT } from '../constants'
 import { combineReducers } from 'redux'
 
 /*const initialState = {
@@ -465,6 +465,16 @@ export const upload = (state = initialState, action)  => {
   }
 }
 
+export const alert = (state = false, action) => {
+  switch (action.type) {
+    case OPEN_ALERT:
+      return true;
+    default:
+      return false;
+  }
+};
+
 export default combineReducers({
   upload,
+  alert
 })

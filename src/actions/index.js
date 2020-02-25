@@ -1,4 +1,4 @@
-import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN } from '../constants'
+import { UPLOAD_IMAGE, UPLOAD_LOADING, CLEAR_IMAGE, UPDATE_TOKEN, OPEN_ALERT, CLOSE_ALERT } from '../constants'
 import { stringify } from 'qs';
 import axios from 'axios';
 import _ from 'lodash';
@@ -122,6 +122,20 @@ export const viewData = async (dispatch, tokenResult) => {
   });
   dispatch({
     type: UPLOAD_LOADING,
+    data: false,
+  })
+}
+
+export const openAlert = (dispatch) => {
+  dispatch({
+    type: OPEN_ALERT,
+    data: true,
+  })
+}
+
+export const closeAlert = (dispatch) => {
+  dispatch({
+    type: CLOSE_ALERT,
     data: false,
   })
 }

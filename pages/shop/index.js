@@ -6,9 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import SearchBar from '../src/components/SearchBar';
+import SearchBar from '../../src/components/SearchBar';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Link from '@material-ui/core/Link';
+import FakeData from '../../src/utils/fake'
 
 const useStyles = makeStyles(theme => ({
   catImg: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function ShopPage() {
+function ResponsiveDrawer() {
   const classes = useStyles();
 
   return (
@@ -52,44 +53,26 @@ function ShopPage() {
           </Button>
         </Grid>
       </Grid>
-      <Grid xs={12} item className={classes.cat}>
-        <Link href="#">
-          <img src="/static/images/cat3.png" className={classes.catImg} />
-          <Grid container>
-            <Typography variant="h6" className={classes.title}>
-              Fresh Food
-            </Typography>
-            <NavigateNextIcon fontSize="large" />
+      {FakeData.map(cat => {
+        return (
+          <Grid xs={12} item className={classes.cat}>
+            <Link href={`/shop/${cat.code}`}>
+              <img src={cat.img} className={classes.catImg} />
+              <Grid xs={12} container>
+                <Typography variant="h6" className={classes.title}>
+                  {cat.name}
+                </Typography>
+                <NavigateNextIcon fontSize="large" />
+              </Grid>
+            </Link>
           </Grid>
-        </Link>
-      </Grid>
-      <Grid xs={12} item className={classes.cat}>
-        <Link href="#">
-          <img src="/static/images/cat2.png" className={classes.catImg} />
-          <Grid container>
-            <Typography variant="h6" className={classes.title}>
-              Shampoo & Conditioner
-            </Typography>
-            <NavigateNextIcon fontSize="large" />
-          </Grid>
-        </Link>
-      </Grid>
-      <Grid xs={12} item className={classes.cat}>
-        <Link href="#">
-          <img src="/static/images/cat1.png" className={classes.catImg} />
-          <Grid container>
-            <Typography variant="h6" className={classes.title}>
-              Detergent
-            </Typography>
-            <NavigateNextIcon fontSize="large" />
-          </Grid>
-        </Link>
-      </Grid>
+        )
+      })}
     </Grid>
   );
 }
 
-ShopPage.propTypes = {
+ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -97,4 +80,4 @@ ShopPage.propTypes = {
   container: PropTypes.any,
 };
 
-export default ShopPage;
+export default ResponsiveDrawer;

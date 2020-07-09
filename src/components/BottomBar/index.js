@@ -37,6 +37,7 @@ export default function SimpleBottomNavigation() {
         }
       }}
       className={classes.root}
+      style={{zIndex: 100}}
     >
       <BottomNavigationAction label="Shop" showLabel={true} icon={<ShoppingCartIcon />} value={"/shop"} />
       <BottomNavigationAction label="Home" showLabel={true} icon={<Home />} value={"home"} />

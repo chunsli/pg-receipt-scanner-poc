@@ -5,7 +5,7 @@ import { brandName } from '../../utils/fake'
 
 const useStyles = makeStyles({
   card: {
-    borderRadius: '20px',
+    maxHeight: '150px'
   },
 });
 
@@ -32,7 +32,7 @@ export function CatProductCard(props) {
                 image={props.imgUrl}
                 title={props.nameEN}
                 style={{
-                  maxHeight: '80%'
+                  maxHeight: '100px'
                 }}
               />
             </Box>

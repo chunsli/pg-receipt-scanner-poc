@@ -17,6 +17,14 @@ function FilterIcon(props) {
   );
 }
 
+const cheapestPrice = (data) => Object.entries(data).reduce((cur, [key, value]) => {
+  if (value.Price < cur) {
+    return value.Price
+  } else {
+    return cur
+  }
+}, Number.POSITIVE_INFINITY)
+
 const useStyles = makeStyles(theme =>  ({
   catImg: {
     objectFit: 'cover',
@@ -63,9 +71,12 @@ const Category = () => {
         </Grid>
       </Grid>
       <Box display="flex" flexDirection="column" px={2} width="100%">
-        {cat.data.map(item => {
+        {cat.data.filter(item => {
+          const cheapestP = cheapestPrice(item.data)
+          return cheapestP >0
+        }).map(item => {
           return (
-            <Link key={item.barcode} href={`/shop/${catCode}/${item.code}`}>
+            <Link key={item.code} href={`/shop/${catCode}/${item.code}`}>
               <Box width="100%" mb={2}>
                 <CatProductCard {...item} />
               </Box>

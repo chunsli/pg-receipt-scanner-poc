@@ -1329,7 +1329,7 @@ const data = [
     "name": "Milk powder / Baby care",
     "code": "037",
     ...require('./data/037.json'),
-    img: '/static/images/cat-040.png',
+    img: '/static/images/cat-037.png',
     "subs": [
       {
         "name": "Infant formula / Growing-up formula",

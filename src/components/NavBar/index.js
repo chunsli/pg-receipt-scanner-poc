@@ -16,6 +16,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import Avatar from '@material-ui/core/Avatar';
 import UndoIcon from '@material-ui/icons/Undo';
 import HistoryIcon from '@material-ui/icons/History';
+import PieChartIcon from '@material-ui/icons/PieChart';
 import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
 
 import {
@@ -156,6 +157,12 @@ function NavBar(props) {
           <ListItem button key={'History'} onClick={handleDrawerToggle}>
             <ListItemIcon><HistoryIcon /></ListItemIcon>
             <ListItemText primary={'History'}>History</ListItemText>
+          </ListItem>
+        </Link>
+        <Link href="/analytics">
+          <ListItem button key={'Analytics'} onClick={handleDrawerToggle}>
+            <ListItemIcon><PieChartIcon /></ListItemIcon>
+            <ListItemText primary={'Spending Analytics'}>Spending Analytics</ListItemText>
           </ListItem>
         </Link>
         <ListItem button key={'Setting'}>

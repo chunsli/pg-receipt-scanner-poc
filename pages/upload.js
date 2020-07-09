@@ -33,10 +33,10 @@ function ResponsiveDrawer({ handleOpenAlert }) {
       <Grid container direction={'row'} align-content-xs-between={'true'}	>
         <Grid xs={6} item className={classes.catBtn}>
           <Button variant="outlined" color="primary" fullWidth startIcon={<HomeIcon />} onClick={() => {
-            Router.push('/');
+            Router.push('/analytics');
             return handleOpenAlert();
           }}>
-            Home
+            Spending Analytics
           </Button>
         </Grid>
         <Grid xs={6} item className={classes.catBtn}>

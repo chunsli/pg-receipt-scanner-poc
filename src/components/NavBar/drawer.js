@@ -10,6 +10,7 @@ import FeedbackIcon from "@material-ui/icons/Feedback";
 import StarsIcon from "@material-ui/icons/Stars";
 import HistoryIcon from "@material-ui/icons/History";
 import SettingsIcon from "@material-ui/icons/Settings";
+import PieChartIcon from '@material-ui/icons/PieChart'
 import React from "react";
 import {makeStyles, useTheme, withStyles} from "@material-ui/core/styles";
 import connect from "react-redux/es/connect/connect";
@@ -84,6 +85,12 @@ const Drawer = () => {
           <ListItem button key={'history'} onClick={handleDrawerToggle}>
             <ListItemIcon><HistoryIcon /></ListItemIcon>
             <ListItemText primary={'history'}>History</ListItemText>
+          </ListItem>
+        </Link>
+        <Link href="/analytics">
+          <ListItem button key={'Analytics'} onClick={handleDrawerToggle}>
+            <ListItemIcon><PieChartIcon /></ListItemIcon>
+            <ListItemText primary={'Spending Analytics'}>Spending Analytics</ListItemText>
           </ListItem>
         </Link>
         <ListItem button key={'Setting'}>

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 import SearchBar from '../../src/components/SearchBar';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link';
 import FakeData from '../../src/utils/fake'
 
 const useStyles = makeStyles(theme => ({
@@ -56,14 +56,16 @@ function ResponsiveDrawer() {
       {FakeData.map(cat => {
         return (
           <Grid xs={12} item className={classes.cat}>
-            <Link href={`/shop/${cat.code}`}>
-              <img src={cat.img} className={classes.catImg} />
-              <Grid xs={12} container>
-                <Typography variant="h6" className={classes.title}>
-                  {cat.name}
-                </Typography>
-                <NavigateNextIcon fontSize="large" />
-              </Grid>
+            <Link href="/shop/[catCode]" as={`/shop/${cat.code}`}>
+              <a>
+                <img src={cat.img} className={classes.catImg} />
+                <Grid xs={12} container>
+                  <Typography variant="h6" className={classes.title}>
+                    {cat.name}
+                  </Typography>
+                  <NavigateNextIcon fontSize="large" />
+                </Grid>
+              </a>
             </Link>
           </Grid>
         )

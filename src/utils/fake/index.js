@@ -1427,7 +1427,7 @@ const data = [
     "name": "Personal care",
     "code": "040",
     ...require('./data/040.json'),
-    img: '/static/images/cat-040.png',
+    img: '/static/images/cat-040.jpg',
     "subs": [
       {
         "name": "Oral care",

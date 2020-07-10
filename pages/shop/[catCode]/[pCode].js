@@ -45,6 +45,8 @@ const useStyles = makeStyles(theme => ({
   },
   cardImage: {
     width: '120px',
+    height: '120px',
+    objectFit: 'contain',
     margin: '0 auto',
   },
   title: {

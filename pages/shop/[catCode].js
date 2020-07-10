@@ -89,10 +89,9 @@ const Category = () => {
       <Box display="flex" flexDirection="column" px={2} width="100%">
         {data
           .map(item => {
-
             return (
-              <Link key={item.code} href={`/shop/${catCode}/${item.code}`}>
-                <Box width="100%" mb={2}>
+              <Link key={item.code} href="/shop/[catCode]/[pCode]" as={`/shop/${catCode}/${item.code}`}>
+                <Box width="100%" mb={2} component='a'>
                   <CatProductCard {...item} />
                 </Box>
               </Link>

@@ -33,7 +33,7 @@ import {
   Toolbar
 } from "@material-ui/core";
 import Link from 'next/link';
-
+import { useRouter } from 'next/router'
 import UploadButton from '../UploadButton';
 import Router from "next/router";
 import Grid from "@material-ui/core/Grid";
@@ -83,7 +83,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function NavBar(props) {
-  const { path } = props;
+  const route = useRouter()
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -178,7 +178,7 @@ function NavBar(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          {path === '/' ? (
+          {route.pathname === '/' ? (
             <IconButton
               color="inherit"
               aria-label="open drawer"

@@ -32,7 +32,8 @@ export function CatProductCard(props) {
                 image={props.imgUrl}
                 title={props.nameEN}
                 style={{
-                  maxHeight: '110px'
+                  maxHeight: '110px',
+                  objectFit: 'contain'
                 }}
               />
             </Box>

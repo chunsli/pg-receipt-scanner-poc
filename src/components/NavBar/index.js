@@ -193,7 +193,7 @@ function NavBar(props) {
               color="inherit"
               aria-label="Back to home"
               edge="start"
-              onClick={() => Router.push('/')}
+              onClick={() => Router.back()}
               className={classes.menuButton}
             >
               <UndoIcon />

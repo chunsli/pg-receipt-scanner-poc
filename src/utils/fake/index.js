@@ -400,7 +400,7 @@ const data = [
     ]
   },
   {
-    "name": "Rice / Oil / Canned food / Fruits / Vegetables / Meat",
+    "name": "Rice / Fruits / Vegetables / Meat",
     "code": "015",
     ...require('./data/015.json'),
     img: '/static/images/cat-015.png',
@@ -874,7 +874,7 @@ const data = [
     ]
   },
   {
-    "name": "Noodles / Cooking needs / Processed food (cold)",
+    "name": "Cooking needs / Processed food",
     "code": "018",
     ...require('./data/018.json'),
     img: '/static/images/cat-018.png',

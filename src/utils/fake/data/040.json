@@ -13407,40 +13407,6 @@
       "imgUrl": "https://www.watsons.com.hk/medias/sys_master/front/zoom/8823897718814.jpg"
     },
     {
-      "name": "Hydro Boost 水活保濕凝露 50克",
-      "nameEN": "Hydro Boost Water Gel 50g",
-      "nameSC": "Hydro Boost 水活保濕凝露 50克",
-      "brand": "露得清 Neutrogena",
-      "brandEN": "Neutrogena",
-      "brandSC": "露得清 Neutrogena",
-      "cat1": "040",
-      "cat2": "005",
-      "cat3": "002",
-      "code": "P000002852",
-      "barcode": "4891080614470",
-      "salt": "Y",
-      "sugar": "Y",
-      "data": {
-        "WATSONS": {
-          "ItemCode": "P000002852",
-          "SupermarketCode": "WATSONS",
-          "Price": "139.9",
-          "PriceDateShort": "2020-07-10",
-          "PriceRemark": "",
-          "PriceRemarkEN": "",
-          "PriceRemarkSC": "",
-          "PriceAvgRemark": "",
-          "PriceAvgRemarkEN": "",
-          "PriceAvgRemarkSC": "",
-          "PriceAvg": 0,
-          "PricePerUnit": 27.98,
-          "PriceAvgPerUnit": 0
-        }
-      },
-      "lastUpdate": "2020-07-10",
-      "imgUrl": "https://www.watsons.com.hk/medias/sys_master/front/zoom/8904157593630.jpg"
-    },
-    {
       "name": "Aqua Sensation 24小時補濕晶華 50毫升",
       "nameEN": "Aqua Sensation Invigorating Day Cream 50mL",
       "nameSC": "Aqua Sensation 24小時補濕晶華 50毫升",
@@ -20948,55 +20914,6 @@
       "imgUrl": "https://www.parknshop.com/medias/sys_master/front/zoom/8836629987358.jpg"
     },
     {
-      "name": "無味強效驅蚊噴霧 175毫升",
-      "nameEN": "Odourless Protection Insect Repellent Spray 175mL",
-      "nameSC": "無味強效驅蚊噴霧 175毫升",
-      "brand": "澳樂家 Aerogard",
-      "brandEN": "Aerogard",
-      "brandSC": "澳樂家 Aerogard",
-      "cat1": "040",
-      "cat2": "010",
-      "cat3": "210",
-      "code": "P000003376",
-      "barcode": "93203555",
-      "salt": "Y",
-      "sugar": "Y",
-      "data": {
-        "JASONS": {
-          "ItemCode": "P000003376",
-          "SupermarketCode": "JASONS",
-          "Price": "63.9",
-          "PriceDateShort": "2020-07-10",
-          "PriceRemark": "買1件送1件",
-          "PriceRemarkEN": "Buy 1 get 1 free",
-          "PriceRemarkSC": "买1件送1件",
-          "PriceAvgRemark": "平均每件$31.95",
-          "PriceAvgRemarkEN": "Average @ $31.95",
-          "PriceAvgRemarkSC": "平均每件$31.95",
-          "PriceAvg": 31.95,
-          "PricePerUnit": 3.65,
-          "PriceAvgPerUnit": 1.83
-        },
-        "PARKNSHOP": {
-          "ItemCode": "P000003376",
-          "SupermarketCode": "PARKNSHOP",
-          "Price": "63.9",
-          "PriceDateShort": "2020-07-10",
-          "PriceRemark": "",
-          "PriceRemarkEN": "",
-          "PriceRemarkSC": "",
-          "PriceAvgRemark": "",
-          "PriceAvgRemarkEN": "",
-          "PriceAvgRemarkSC": "",
-          "PriceAvg": 0,
-          "PricePerUnit": 3.65,
-          "PriceAvgPerUnit": 0
-        }
-      },
-      "lastUpdate": "2020-07-10",
-      "imgUrl": "https://www.marketplacebyjasons.com/mpj2/userfile/wd/pdt/all/PL315987.jpg"
-    },
-    {
       "name": "全效版配方驅蚊防蟲噴霧 70毫升",
       "nameEN": "Mosquito & Insect Repellent Spray 70mL",
       "nameSC": "全效版配方驅蚊防蟲噴霧 70毫升",
@@ -21128,39 +21045,7 @@
       "lastUpdate": "2020-07-10",
       "imgUrl": "https://www.wellcome.com.hk/wd2/userfile/wd/pdt/all/PL381766.jpg"
     },
-    {
-      "name": "特效驅蚊噴霧 80毫升",
-      "nameEN": "Insect Repellent Spray 80mL",
-      "nameSC": "特效驅蚊噴霧 80毫升",
-      "brand": "莫釘我 Moskigo",
-      "brandEN": "Moskigo",
-      "brandSC": "莫釘我 Moskigo",
-      "cat1": "040",
-      "cat2": "010",
-      "cat3": "210",
-      "code": "P000003378",
-      "barcode": "",
-      "salt": "Y",
-      "sugar": "Y",
-      "data": {
-        "PARKNSHOP": {
-          "ItemCode": "P000003378",
-          "SupermarketCode": "PARKNSHOP",
-          "Price": "53.9",
-          "PriceDateShort": "2020-07-10",
-          "PriceRemark": "",
-          "PriceRemarkEN": "",
-          "PriceRemarkSC": "",
-          "PriceAvgRemark": "",
-          "PriceAvgRemarkEN": "",
-          "PriceAvgRemarkSC": "",
-          "PriceAvg": 0,
-          "PricePerUnit": 6.74,
-          "PriceAvgPerUnit": 0
-        }
-      },
-      "lastUpdate": "2020-07-10"
-    },
+
     {
       "name": "成人配方驅蚊劑 50毫升",
       "nameEN": "DEET Insect Repellent 50mL",
@@ -26251,39 +26136,6 @@
       },
       "lastUpdate": "2020-07-10",
       "imgUrl": "https://www.wellcome.com.hk/wd2/userfile/wd/pdt/all/PL132952.jpg"
-    },
-    {
-      "name": "成人紙尿片褲 (中碼) 10片",
-      "nameEN": "Adult Diapers (M) 10pcs",
-      "nameSC": "成人紙尿片褲 (中碼) 10片",
-      "brand": "德寶 Dispo 123",
-      "brandEN": "Dispo 123",
-      "brandSC": "德宝 Dispo 123",
-      "cat1": "040",
-      "cat2": "210",
-      "cat3": "301",
-      "code": "P000002634",
-      "barcode": "8850709210024",
-      "salt": "Y",
-      "sugar": "Y",
-      "data": {
-        "PARKNSHOP": {
-          "ItemCode": "P000002634",
-          "SupermarketCode": "PARKNSHOP",
-          "Price": "41",
-          "PriceDateShort": "2020-07-10",
-          "PriceRemark": "",
-          "PriceRemarkEN": "",
-          "PriceRemarkSC": "",
-          "PriceAvgRemark": "",
-          "PriceAvgRemarkEN": "",
-          "PriceAvgRemarkSC": "",
-          "PriceAvg": 0,
-          "PricePerUnit": 4.1,
-          "PriceAvgPerUnit": 0
-        }
-      },
-      "lastUpdate": "2020-07-10"
     },
     {
       "name": "成人紙尿片 夜用型 (中碼) 9片",

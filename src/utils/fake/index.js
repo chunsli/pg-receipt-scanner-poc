@@ -1,5 +1,701 @@
 const data = [
   {
+    "name": "Milk powder / Baby care",
+    "code": "037",
+    ...require('./data/037.json'),
+    img: '/static/images/cat-037.png',
+    "subs": [
+      {
+        "name": "Infant formula / Growing-up formula",
+        "code": "001",
+        "subs": [
+          {
+            "name": "Infant formula / Follow-on formula / Toddler formula / Growing-up formula",
+            "code": "001"
+          },
+          {
+            "name": "Children's nutrition supplements",
+            "code": "003"
+          }
+        ]
+      },
+      {
+        "name": "Pregnant women's milk powder",
+        "code": "002",
+        "subs": [
+          {
+            "name": "Pregnant women's milk powder",
+            "code": "001"
+          }
+        ]
+      },
+      {
+        "name": "Adult milk powder",
+        "code": "003",
+        "subs": [
+          {
+            "name": "Full cream milk powder",
+            "code": "001"
+          },
+          {
+            "name": "Low fat / Skimmed milk powder",
+            "code": "002"
+          },
+          {
+            "name": "Senior formula",
+            "code": "003"
+          },
+          {
+            "name": "Nutrition supplements",
+            "code": "010"
+          }
+        ]
+      },
+      {
+        "name": "Baby foods / Infant foods",
+        "code": "011",
+        "subs": [
+          {
+            "name": "Infant rice cereals / Baby rice cereals",
+            "code": "101"
+          },
+          {
+            "name": "Baby snacks",
+            "code": "105"
+          }
+        ]
+      },
+      {
+        "name": "Baby products",
+        "code": "020",
+        "subs": [
+          {
+            "name": "Diapers",
+            "code": "010"
+          },
+          {
+            "name": "Diaper pants",
+            "code": "015"
+          },
+          {
+            "name": "Baby wipes",
+            "code": "020"
+          },
+          {
+            "name": "Shampoos",
+            "code": "040"
+          },
+          {
+            "name": "Body washes",
+            "code": "030"
+          },
+          {
+            "name": "Baby Oils",
+            "code": "050"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Personal care",
+    "code": "040",
+    ...require('./data/040.json'),
+    img: '/static/images/cat-040.jpg',
+    "subs": [
+      {
+        "name": "Oral care",
+        "code": "001",
+        "subs": [
+          {
+            "name": "Toothpastes",
+            "code": "001"
+          },
+          {
+            "name": "Floss",
+            "code": "002"
+          },
+          {
+            "name": "Mouthwashes",
+            "code": "003"
+          },
+          {
+            "name": "Toothbrushes",
+            "code": "004"
+          },
+          {
+            "name": "Electric toothbrush brushheads",
+            "code": "005"
+          },
+          {
+            "name": "Electric toothbrushes (alkaline Battery)",
+            "code": "006"
+          },
+          {
+            "name": "Electric toothbrushes (rechargeable)",
+            "code": "007"
+          }
+        ]
+      },
+      {
+        "name": "Feminine care",
+        "code": "002",
+        "subs": [
+          {
+            "name": "Sanitary napkins",
+            "code": "001"
+          },
+          {
+            "name": "Sanitary pads",
+            "code": "002"
+          },
+          {
+            "name": "Sanitary tampons",
+            "code": "008"
+          },
+          {
+            "name": "Feminine washes",
+            "code": "012"
+          }
+        ]
+      },
+      {
+        "name": "Hair care",
+        "code": "004",
+        "subs": [
+          {
+            "name": "Shampoos",
+            "code": "001"
+          },
+          {
+            "name": "Conditioners",
+            "code": "003"
+          },
+          {
+            "name": "Hair stylings",
+            "code": "010"
+          },
+          {
+            "name": "Hair Colourings",
+            "code": "012"
+          }
+        ]
+      },
+      {
+        "name": "Bathing lotions / Liquid soap / Soap",
+        "code": "003",
+        "subs": [
+          {
+            "name": "Body washes / Shower gels",
+            "code": "001"
+          },
+          {
+            "name": "Hand washes",
+            "code": "002"
+          },
+          {
+            "name": "Soaps",
+            "code": "007"
+          }
+        ]
+      },
+      {
+        "name": "Hand sanitation",
+        "code": "009",
+        "subs": [
+          {
+            "name": "Hand sanitizers",
+            "code": "001"
+          },
+          {
+            "name": "Hand sanitizing moist wipes",
+            "code": "002"
+          }
+        ]
+      },
+      {
+        "name": "Wet wipes",
+        "code": "011",
+        "subs": [
+          {
+            "name": "Disposable wet wipes",
+            "code": "001"
+          },
+          {
+            "name": "Wet bath tissues",
+            "code": "002"
+          }
+        ]
+      },
+      {
+        "name": "Skin care",
+        "code": "005",
+        "subs": [
+          {
+            "name": "Face cleansing foams / Facial cleansers / Face cleansing gels",
+            "code": "001"
+          },
+          {
+            "name": "Face moisturising creams/gel creams/lotions",
+            "code": "002"
+          },
+          {
+            "name": "Body lotions/creams",
+            "code": "003"
+          },
+          {
+            "name": "Body oils",
+            "code": "004"
+          },
+          {
+            "name": "Petroleum jelly",
+            "code": "005"
+          },
+          {
+            "name": "Sunscreen products",
+            "code": "007"
+          },
+          {
+            "name": "Lip balms",
+            "code": "009"
+          },
+          {
+            "name": "Cleansing cotton",
+            "code": "015"
+          },
+          {
+            "name": "Facial masks / Eye masks",
+            "code": "018"
+          }
+        ]
+      },
+      {
+        "name": "Women's hair removers",
+        "code": "006",
+        "subs": [
+          {
+            "name": "Women's razor sets",
+            "code": "001"
+          },
+          {
+            "name": "Women's razor blade refill cartridges",
+            "code": "011"
+          },
+          {
+            "name": "Women's disposable razors",
+            "code": "021"
+          }
+        ]
+      },
+      {
+        "name": "Men's care",
+        "code": "007",
+        "subs": [
+          {
+            "name": "Razor kits",
+            "code": "001"
+          },
+          {
+            "name": "Razor blade refill cartridges",
+            "code": "003"
+          },
+          {
+            "name": "razors",
+            "code": "005"
+          },
+          {
+            "name": "Shaving foam / Shaving cream / Shaving gel",
+            "code": "007"
+          }
+        ]
+      },
+      {
+        "name": "Antiperspirants / Deodorants",
+        "code": "008",
+        "subs": [
+          {
+            "name": "Sprays",
+            "code": "001"
+          },
+          {
+            "name": "Roll on",
+            "code": "002"
+          },
+          {
+            "name": "Sticks",
+            "code": "003"
+          }
+        ]
+      },
+      {
+        "name": "Drugs / Herbs",
+        "code": "010",
+        "subs": [
+          {
+            "name": "Pain / Fever / Cold / Flu medicines",
+            "code": "001"
+          },
+          {
+            "name": "Cough medicines",
+            "code": "003"
+          },
+          {
+            "name": "Ointments",
+            "code": "009"
+          },
+          {
+            "name": "Proprietary Chinese medicines - Oral",
+            "code": "019"
+          },
+          {
+            "name": "Proprietary Chinese medicines - powder for oral solution",
+            "code": "020"
+          },
+          {
+            "name": "Proprietary Chinese medicines - Medicinal oils",
+            "code": "022"
+          },
+          {
+            "name": "Gastro-intestinal drugs",
+            "code": "029"
+          },
+          {
+            "name": "Other health supplements",
+            "code": "190"
+          },
+          {
+            "name": "Alcohol of mint / Essential oil of peppermint",
+            "code": "200"
+          },
+          {
+            "name": "Insect repellents",
+            "code": "210"
+          },
+          {
+            "name": "Pain relief patches",
+            "code": "230"
+          }
+        ]
+      },
+      {
+        "name": "Health supplements / Dietary supplements",
+        "code": "013",
+        "subs": [
+          {
+            "name": "Lozenges",
+            "code": "001"
+          },
+          {
+            "name": "Bird's nest",
+            "code": "003"
+          },
+          {
+            "name": "Chicken essence",
+            "code": "008"
+          },
+          {
+            "name": "Vitamins / Minerals",
+            "code": "015"
+          },
+          {
+            "name": "Fish oil / Fish liver oil / Liver oil",
+            "code": "019"
+          }
+        ]
+      },
+      {
+        "name": "First aid",
+        "code": "015",
+        "subs": [
+          {
+            "name": "Tape",
+            "code": "003"
+          },
+          {
+            "name": "Cooling gel sheets",
+            "code": "005"
+          }
+        ]
+      },
+      {
+        "name": "Health protection products",
+        "code": "805",
+        "subs": [
+          {
+            "name": "Face masks / Surgical masks",
+            "code": "001"
+          }
+        ]
+      },
+      {
+        "name": "Medical equipment",
+        "code": "801",
+        "subs": [
+          {
+            "name": "Medical thermometers",
+            "code": "001"
+          },
+          {
+            "name": "Blood pressure monitors",
+            "code": "002"
+          }
+        ]
+      },
+      {
+        "name": "Contraceptives",
+        "code": "110",
+        "subs": [
+          {
+            "name": "Condoms",
+            "code": "101"
+          }
+        ]
+      },
+      {
+        "name": "Adult diapers / diaper pants",
+        "code": "210",
+        "subs": [
+          {
+            "name": "Adult Diapers/Diaper Pants",
+            "code": "301"
+          },
+          {
+            "name": "Underpads",
+            "code": "303"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Household",
+    "code": "045",
+    ...require('./data/045.json'),
+    img: '/static/images/cat-045.png',
+    "subs": [
+      {
+        "name": "Laundry needs",
+        "code": "001",
+        "subs": [
+          {
+            "name": "Laundry powder detergents",
+            "code": "001"
+          },
+          {
+            "name": "Liquid laundry detergents",
+            "code": "002"
+          },
+          {
+            "name": "Stain Removers",
+            "code": "004"
+          },
+          {
+            "name": "Softeners",
+            "code": "003"
+          }
+        ]
+      },
+      {
+        "name": "Household cleaning",
+        "code": "002",
+        "subs": [
+          {
+            "name": "Dishwashing liquid",
+            "code": "001"
+          },
+          {
+            "name": "General cleaners",
+            "code": "002"
+          },
+          {
+            "name": "Glass cleaners",
+            "code": "003"
+          },
+          {
+            "name": "Bathroom cleaners",
+            "code": "005"
+          },
+          {
+            "name": "Kitchen cleaners",
+            "code": "011"
+          },
+          {
+            "name": "Toilet cleaners",
+            "code": "007"
+          },
+          {
+            "name": "Furniture polish",
+            "code": "009"
+          },
+          {
+            "name": "Bleach",
+            "code": "015"
+          },
+          {
+            "name": "Disinfectants",
+            "code": "017"
+          },
+          {
+            "name": "Drain cleaners",
+            "code": "020"
+          },
+          {
+            "name": "Air Conditioner Cleaner",
+            "code": "251"
+          },
+          {
+            "name": "Gloves",
+            "code": "025"
+          },
+          {
+            "name": "Scourers / Sponges",
+            "code": "031"
+          },
+          {
+            "name": "Mops",
+            "code": "111"
+          }
+        ]
+      },
+      {
+        "name": "Paper",
+        "code": "003",
+        "subs": [
+          {
+            "name": "Boxed facial tissues",
+            "code": "001"
+          },
+          {
+            "name": "Soft pack facial tissues",
+            "code": "101"
+          },
+          {
+            "name": "Pocket size facial tissues",
+            "code": "111"
+          },
+          {
+            "name": "Bathroom tissues / Toilet tissues / Toilet rolls / Toilet paper",
+            "code": "002"
+          },
+          {
+            "name": "Kitchen paper towels",
+            "code": "003"
+          },
+          {
+            "name": "Hand paper towels",
+            "code": "020"
+          }
+        ]
+      },
+      {
+        "name": "Wraps / Food bags / Foil",
+        "code": "004",
+        "subs": [
+          {
+            "name": "Cling wraps",
+            "code": "001"
+          },
+          {
+            "name": "Storage bags",
+            "code": "003"
+          },
+          {
+            "name": "Aluminium foil",
+            "code": "005"
+          }
+        ]
+      },
+      {
+        "name": "Dehumidfiers / Mold prevention",
+        "code": "020",
+        "subs": [
+          {
+            "name": "Dehumidifiers - tank",
+            "code": "010"
+          },
+          {
+            "name": "Dehumidifying bags",
+            "code": "020"
+          }
+        ]
+      },
+      {
+        "name": "Insecticides",
+        "code": "027",
+        "subs": [
+          {
+            "name": "Insecticides",
+            "code": "005"
+          },
+          {
+            "name": "Mosquito repellent",
+            "code": "033"
+          }
+        ]
+      },
+      {
+        "name": "Electrical products",
+        "code": "801",
+        "subs": [
+          {
+            "name": "Compact fluorescent lamps / Energy saving lamps",
+            "code": "201"
+          },
+          {
+            "name": "LED lamps",
+            "code": "211"
+          }
+        ]
+      },
+      {
+        "name": "Batteries",
+        "code": "803",
+        "subs": [
+          {
+            "name": "AA batteries",
+            "code": "001"
+          },
+          {
+            "name": "AAA batteries",
+            "code": "005"
+          }
+        ]
+      },
+      {
+        "name": "Pet food",
+        "code": "805",
+        "subs": [
+          {
+            "name": "Dry Dog Foods",
+            "code": "001"
+          },
+          {
+            "name": "Canned Dog Foods",
+            "code": "003"
+          },
+          {
+            "name": "Dry Cat Foods",
+            "code": "005"
+          },
+          {
+            "name": "Canned Cat Foods",
+            "code": "007"
+          }
+        ]
+      },
+      {
+        "name": "Pet care",
+        "code": "809",
+        "subs": [
+          {
+            "name": "Cat Litter",
+            "code": "001"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Bakery / Cereals / Spreads",
     ...require('./data/001.json'),
     img: '/static/images/cat-001.png',
@@ -1319,702 +2015,6 @@ const data = [
         "subs": [
           {
             "name": "Mango Smoothie",
-            "code": "001"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Milk powder / Baby care",
-    "code": "037",
-    ...require('./data/037.json'),
-    img: '/static/images/cat-037.png',
-    "subs": [
-      {
-        "name": "Infant formula / Growing-up formula",
-        "code": "001",
-        "subs": [
-          {
-            "name": "Infant formula / Follow-on formula / Toddler formula / Growing-up formula",
-            "code": "001"
-          },
-          {
-            "name": "Children's nutrition supplements",
-            "code": "003"
-          }
-        ]
-      },
-      {
-        "name": "Pregnant women's milk powder",
-        "code": "002",
-        "subs": [
-          {
-            "name": "Pregnant women's milk powder",
-            "code": "001"
-          }
-        ]
-      },
-      {
-        "name": "Adult milk powder",
-        "code": "003",
-        "subs": [
-          {
-            "name": "Full cream milk powder",
-            "code": "001"
-          },
-          {
-            "name": "Low fat / Skimmed milk powder",
-            "code": "002"
-          },
-          {
-            "name": "Senior formula",
-            "code": "003"
-          },
-          {
-            "name": "Nutrition supplements",
-            "code": "010"
-          }
-        ]
-      },
-      {
-        "name": "Baby foods / Infant foods",
-        "code": "011",
-        "subs": [
-          {
-            "name": "Infant rice cereals / Baby rice cereals",
-            "code": "101"
-          },
-          {
-            "name": "Baby snacks",
-            "code": "105"
-          }
-        ]
-      },
-      {
-        "name": "Baby products",
-        "code": "020",
-        "subs": [
-          {
-            "name": "Diapers",
-            "code": "010"
-          },
-          {
-            "name": "Diaper pants",
-            "code": "015"
-          },
-          {
-            "name": "Baby wipes",
-            "code": "020"
-          },
-          {
-            "name": "Shampoos",
-            "code": "040"
-          },
-          {
-            "name": "Body washes",
-            "code": "030"
-          },
-          {
-            "name": "Baby Oils",
-            "code": "050"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Personal care",
-    "code": "040",
-    ...require('./data/040.json'),
-    img: '/static/images/cat-040.jpg',
-    "subs": [
-      {
-        "name": "Oral care",
-        "code": "001",
-        "subs": [
-          {
-            "name": "Toothpastes",
-            "code": "001"
-          },
-          {
-            "name": "Floss",
-            "code": "002"
-          },
-          {
-            "name": "Mouthwashes",
-            "code": "003"
-          },
-          {
-            "name": "Toothbrushes",
-            "code": "004"
-          },
-          {
-            "name": "Electric toothbrush brushheads",
-            "code": "005"
-          },
-          {
-            "name": "Electric toothbrushes (alkaline Battery)",
-            "code": "006"
-          },
-          {
-            "name": "Electric toothbrushes (rechargeable)",
-            "code": "007"
-          }
-        ]
-      },
-      {
-        "name": "Feminine care",
-        "code": "002",
-        "subs": [
-          {
-            "name": "Sanitary napkins",
-            "code": "001"
-          },
-          {
-            "name": "Sanitary pads",
-            "code": "002"
-          },
-          {
-            "name": "Sanitary tampons",
-            "code": "008"
-          },
-          {
-            "name": "Feminine washes",
-            "code": "012"
-          }
-        ]
-      },
-      {
-        "name": "Hair care",
-        "code": "004",
-        "subs": [
-          {
-            "name": "Shampoos",
-            "code": "001"
-          },
-          {
-            "name": "Conditioners",
-            "code": "003"
-          },
-          {
-            "name": "Hair stylings",
-            "code": "010"
-          },
-          {
-            "name": "Hair Colourings",
-            "code": "012"
-          }
-        ]
-      },
-      {
-        "name": "Bathing lotions / Liquid soap / Soap",
-        "code": "003",
-        "subs": [
-          {
-            "name": "Body washes / Shower gels",
-            "code": "001"
-          },
-          {
-            "name": "Hand washes",
-            "code": "002"
-          },
-          {
-            "name": "Soaps",
-            "code": "007"
-          }
-        ]
-      },
-      {
-        "name": "Hand sanitation",
-        "code": "009",
-        "subs": [
-          {
-            "name": "Hand sanitizers",
-            "code": "001"
-          },
-          {
-            "name": "Hand sanitizing moist wipes",
-            "code": "002"
-          }
-        ]
-      },
-      {
-        "name": "Wet wipes",
-        "code": "011",
-        "subs": [
-          {
-            "name": "Disposable wet wipes",
-            "code": "001"
-          },
-          {
-            "name": "Wet bath tissues",
-            "code": "002"
-          }
-        ]
-      },
-      {
-        "name": "Skin care",
-        "code": "005",
-        "subs": [
-          {
-            "name": "Face cleansing foams / Facial cleansers / Face cleansing gels",
-            "code": "001"
-          },
-          {
-            "name": "Face moisturising creams/gel creams/lotions",
-            "code": "002"
-          },
-          {
-            "name": "Body lotions/creams",
-            "code": "003"
-          },
-          {
-            "name": "Body oils",
-            "code": "004"
-          },
-          {
-            "name": "Petroleum jelly",
-            "code": "005"
-          },
-          {
-            "name": "Sunscreen products",
-            "code": "007"
-          },
-          {
-            "name": "Lip balms",
-            "code": "009"
-          },
-          {
-            "name": "Cleansing cotton",
-            "code": "015"
-          },
-          {
-            "name": "Facial masks / Eye masks",
-            "code": "018"
-          }
-        ]
-      },
-      {
-        "name": "Women's hair removers",
-        "code": "006",
-        "subs": [
-          {
-            "name": "Women's razor sets",
-            "code": "001"
-          },
-          {
-            "name": "Women's razor blade refill cartridges",
-            "code": "011"
-          },
-          {
-            "name": "Women's disposable razors",
-            "code": "021"
-          }
-        ]
-      },
-      {
-        "name": "Men's care",
-        "code": "007",
-        "subs": [
-          {
-            "name": "Razor kits",
-            "code": "001"
-          },
-          {
-            "name": "Razor blade refill cartridges",
-            "code": "003"
-          },
-          {
-            "name": "razors",
-            "code": "005"
-          },
-          {
-            "name": "Shaving foam / Shaving cream / Shaving gel",
-            "code": "007"
-          }
-        ]
-      },
-      {
-        "name": "Antiperspirants / Deodorants",
-        "code": "008",
-        "subs": [
-          {
-            "name": "Sprays",
-            "code": "001"
-          },
-          {
-            "name": "Roll on",
-            "code": "002"
-          },
-          {
-            "name": "Sticks",
-            "code": "003"
-          }
-        ]
-      },
-      {
-        "name": "Drugs / Herbs",
-        "code": "010",
-        "subs": [
-          {
-            "name": "Pain / Fever / Cold / Flu medicines",
-            "code": "001"
-          },
-          {
-            "name": "Cough medicines",
-            "code": "003"
-          },
-          {
-            "name": "Ointments",
-            "code": "009"
-          },
-          {
-            "name": "Proprietary Chinese medicines - Oral",
-            "code": "019"
-          },
-          {
-            "name": "Proprietary Chinese medicines - powder for oral solution",
-            "code": "020"
-          },
-          {
-            "name": "Proprietary Chinese medicines - Medicinal oils",
-            "code": "022"
-          },
-          {
-            "name": "Gastro-intestinal drugs",
-            "code": "029"
-          },
-          {
-            "name": "Other health supplements",
-            "code": "190"
-          },
-          {
-            "name": "Alcohol of mint / Essential oil of peppermint",
-            "code": "200"
-          },
-          {
-            "name": "Insect repellents",
-            "code": "210"
-          },
-          {
-            "name": "Pain relief patches",
-            "code": "230"
-          }
-        ]
-      },
-      {
-        "name": "Health supplements / Dietary supplements",
-        "code": "013",
-        "subs": [
-          {
-            "name": "Lozenges",
-            "code": "001"
-          },
-          {
-            "name": "Bird's nest",
-            "code": "003"
-          },
-          {
-            "name": "Chicken essence",
-            "code": "008"
-          },
-          {
-            "name": "Vitamins / Minerals",
-            "code": "015"
-          },
-          {
-            "name": "Fish oil / Fish liver oil / Liver oil",
-            "code": "019"
-          }
-        ]
-      },
-      {
-        "name": "First aid",
-        "code": "015",
-        "subs": [
-          {
-            "name": "Tape",
-            "code": "003"
-          },
-          {
-            "name": "Cooling gel sheets",
-            "code": "005"
-          }
-        ]
-      },
-      {
-        "name": "Health protection products",
-        "code": "805",
-        "subs": [
-          {
-            "name": "Face masks / Surgical masks",
-            "code": "001"
-          }
-        ]
-      },
-      {
-        "name": "Medical equipment",
-        "code": "801",
-        "subs": [
-          {
-            "name": "Medical thermometers",
-            "code": "001"
-          },
-          {
-            "name": "Blood pressure monitors",
-            "code": "002"
-          }
-        ]
-      },
-      {
-        "name": "Contraceptives",
-        "code": "110",
-        "subs": [
-          {
-            "name": "Condoms",
-            "code": "101"
-          }
-        ]
-      },
-      {
-        "name": "Adult diapers / diaper pants",
-        "code": "210",
-        "subs": [
-          {
-            "name": "Adult Diapers/Diaper Pants",
-            "code": "301"
-          },
-          {
-            "name": "Underpads",
-            "code": "303"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Household",
-    "code": "045",
-    ...require('./data/045.json'),
-    img: '/static/images/cat-045.png',
-    "subs": [
-      {
-        "name": "Laundry needs",
-        "code": "001",
-        "subs": [
-          {
-            "name": "Laundry powder detergents",
-            "code": "001"
-          },
-          {
-            "name": "Liquid laundry detergents",
-            "code": "002"
-          },
-          {
-            "name": "Stain Removers",
-            "code": "004"
-          },
-          {
-            "name": "Softeners",
-            "code": "003"
-          }
-        ]
-      },
-      {
-        "name": "Household cleaning",
-        "code": "002",
-        "subs": [
-          {
-            "name": "Dishwashing liquid",
-            "code": "001"
-          },
-          {
-            "name": "General cleaners",
-            "code": "002"
-          },
-          {
-            "name": "Glass cleaners",
-            "code": "003"
-          },
-          {
-            "name": "Bathroom cleaners",
-            "code": "005"
-          },
-          {
-            "name": "Kitchen cleaners",
-            "code": "011"
-          },
-          {
-            "name": "Toilet cleaners",
-            "code": "007"
-          },
-          {
-            "name": "Furniture polish",
-            "code": "009"
-          },
-          {
-            "name": "Bleach",
-            "code": "015"
-          },
-          {
-            "name": "Disinfectants",
-            "code": "017"
-          },
-          {
-            "name": "Drain cleaners",
-            "code": "020"
-          },
-          {
-            "name": "Air Conditioner Cleaner",
-            "code": "251"
-          },
-          {
-            "name": "Gloves",
-            "code": "025"
-          },
-          {
-            "name": "Scourers / Sponges",
-            "code": "031"
-          },
-          {
-            "name": "Mops",
-            "code": "111"
-          }
-        ]
-      },
-      {
-        "name": "Paper",
-        "code": "003",
-        "subs": [
-          {
-            "name": "Boxed facial tissues",
-            "code": "001"
-          },
-          {
-            "name": "Soft pack facial tissues",
-            "code": "101"
-          },
-          {
-            "name": "Pocket size facial tissues",
-            "code": "111"
-          },
-          {
-            "name": "Bathroom tissues / Toilet tissues / Toilet rolls / Toilet paper",
-            "code": "002"
-          },
-          {
-            "name": "Kitchen paper towels",
-            "code": "003"
-          },
-          {
-            "name": "Hand paper towels",
-            "code": "020"
-          }
-        ]
-      },
-      {
-        "name": "Wraps / Food bags / Foil",
-        "code": "004",
-        "subs": [
-          {
-            "name": "Cling wraps",
-            "code": "001"
-          },
-          {
-            "name": "Storage bags",
-            "code": "003"
-          },
-          {
-            "name": "Aluminium foil",
-            "code": "005"
-          }
-        ]
-      },
-      {
-        "name": "Dehumidfiers / Mold prevention",
-        "code": "020",
-        "subs": [
-          {
-            "name": "Dehumidifiers - tank",
-            "code": "010"
-          },
-          {
-            "name": "Dehumidifying bags",
-            "code": "020"
-          }
-        ]
-      },
-      {
-        "name": "Insecticides",
-        "code": "027",
-        "subs": [
-          {
-            "name": "Insecticides",
-            "code": "005"
-          },
-          {
-            "name": "Mosquito repellent",
-            "code": "033"
-          }
-        ]
-      },
-      {
-        "name": "Electrical products",
-        "code": "801",
-        "subs": [
-          {
-            "name": "Compact fluorescent lamps / Energy saving lamps",
-            "code": "201"
-          },
-          {
-            "name": "LED lamps",
-            "code": "211"
-          }
-        ]
-      },
-      {
-        "name": "Batteries",
-        "code": "803",
-        "subs": [
-          {
-            "name": "AA batteries",
-            "code": "001"
-          },
-          {
-            "name": "AAA batteries",
-            "code": "005"
-          }
-        ]
-      },
-      {
-        "name": "Pet food",
-        "code": "805",
-        "subs": [
-          {
-            "name": "Dry Dog Foods",
-            "code": "001"
-          },
-          {
-            "name": "Canned Dog Foods",
-            "code": "003"
-          },
-          {
-            "name": "Dry Cat Foods",
-            "code": "005"
-          },
-          {
-            "name": "Canned Cat Foods",
-            "code": "007"
-          }
-        ]
-      },
-      {
-        "name": "Pet care",
-        "code": "809",
-        "subs": [
-          {
-            "name": "Cat Litter",
             "code": "001"
           }
         ]

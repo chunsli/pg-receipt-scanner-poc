@@ -11,6 +11,35 @@ import NavBar from "../src/components/NavBar";
 import BottomBar from "../src/components/BottomBar";
 import Router from 'next/router';
 import { PersistGate } from 'redux-persist/integration/react';
+import styled, { keyframes } from 'styled-components'
+
+const frame = keyframes`
+  0% {
+    opacity:1;
+  }
+  20% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+`
+
+const LoadingWrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #a3dff5, #4296e4);
+  animation: ${frame} ease 3s forwards;
+`
+
+const Img = styled.img`
+  object-fit: contain;
+  max-width: 100%;
+`
+
 
 const _App = withRedux(store)(
   class _App extends App {
@@ -21,11 +50,12 @@ const _App = withRedux(store)(
           : {}
       }
     }
-
     state = {
       path: '/'
     }
-
+    state = {
+      showLoading: true
+    }
     componentDidMount () {
       const jssStyles = document.querySelector('#jss-server-side')
       if (jssStyles && jssStyles.parentNode) {
@@ -34,6 +64,11 @@ const _App = withRedux(store)(
       Router.onRouteChangeStart = url => {
         this.setState(() => ({ path: url }));
       };
+      setTimeout(() => {
+        this.setState({
+          showLoading: false
+        })
+      }, 2500)
     }
 
     render () {
@@ -42,7 +77,6 @@ const _App = withRedux(store)(
         pageProps,
         store,
       } = this.props;
-
       return (
         <Fragment>
           <Head>
@@ -52,14 +86,23 @@ const _App = withRedux(store)(
             <CssBaseline />
             <Provider store={store}>
               <PersistGate persistor={store.__PERSISTOR} loading={null}>
-
-                <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
-                  <NavBar
-                    path={this.state.path}
-                  />
-                  <Component {...pageProps} />
-                  <BottomBar />
-                </div>
+                {
+                  this.state.showLoading
+                    ? (
+                      <LoadingWrapper>
+                        <Img src="/static/images/pgLogo.png" />
+                      </LoadingWrapper>
+                      )
+                    : (
+                      <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
+                        <NavBar
+                          path={this.state.path}
+                        />
+                        <Component {...pageProps} />
+                        <BottomBar />
+                      </div>
+                    )
+                  }
               </PersistGate>
             </Provider>
           </MuiThemeProvider>

@@ -40,6 +40,14 @@ const Img = styled.img`
   max-width: 100%;
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  margin: 60px 0;
+  a {
+    text-decoration: none;
+    color: #3f51b5;
+  }
+`
 
 const _App = withRedux(store)(
   class _App extends App {
@@ -94,13 +102,13 @@ const _App = withRedux(store)(
                       </LoadingWrapper>
                       )
                     : (
-                      <div style={{ marginTop: '60px', marginBottom: '60px', display: 'flex' }}>
+                      <Wrapper>
                         <NavBar
                           path={this.state.path}
                         />
                         <Component {...pageProps} />
                         <BottomBar />
-                      </div>
+                      </Wrapper>
                     )
                   }
               </PersistGate>
